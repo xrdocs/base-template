@@ -1,2 +1,1 @@
-# base-template
-Base Template for each xrdocs sub-website
+Repository to host Blogs, Tutorials, Techdocs for Cisco IOS-XR's Application-Hosting infrastructure. Access the link on github-pages at: https://xrdocs.github.io/application-hosting
