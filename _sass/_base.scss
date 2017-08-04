@@ -314,19 +314,36 @@ nav {
     vertical-align:top;
     font-size:1em;
     width: 25%;
-    height: 1000px;
+    height: 600px;
 }
+
+.rssfeed {
+    position: relative;
+    width: 100%;
+}
+
 
 .container__marketing {
     float: left;
     vertical-align:top;
     width: 70%;
     font-size: 1em;
-    margin: 20px;
+    margin: 10px;
+}
+
+
+
+
+#mobile-indicator {
+    display: none;
 }
 
 
 @media screen and (max-width: 1024px) {
+    #mobile-indicator {
+        display: block;
+    }
+
     .floating__feed {
         position: relative;
         float: none; 
@@ -336,13 +353,19 @@ nav {
     }
 
 
+    .rssfeed {
+        position: relative;
+        width: 100%;
+    }
+
     .container__marketing {
         clear: both;
         float: none;
         display: block;
-        margin: 0px;
+        margin: 10px;
         width: 100%;
     }
+
 }
 
 /*

@@ -11,6 +11,9 @@
 <!-- material-scrolltop button -->
 <button class="material-scrolltop" type="button"></button>
 
+<p>{{ page.url }}</p>
+
+{% if  page.url  != '/' %}
 <!-- material-scrolltop plugin -->
 <script src="{{ base_path }}/assets/js/material-scrolltop.js"></script>
 
@@ -18,3 +21,4 @@
 <script>
     $('body').materialScrollTop();
 </script>
+{% endif %}
