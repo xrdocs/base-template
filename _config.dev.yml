@@ -7,16 +7,16 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "IOS XR Documentation @xrdocs"
-title_short              : "xrdocs-Base"
+title                    : "Cisco IOS XR Documentation @xrdocs"
+title_short              : "@xrdocs"
 title_separator          : "|"
 name                     : &name "Cisco Systems Inc"
-description              : &description "Documentation, Blogs and Tutorials on the IOS-XR software"
-url                      : "http://localhost:4000" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : &description "Documentation, Blogs and Tutorials for all things IOS-XR "
+url                      : http://10.0.0.188:4000 #"https://xrdocs.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-gh_repo                  : "https://github.com/xrdocs/application-hosting"
+gh_repo                  : "https://github.com/xrdocs/"
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-breadcrumbs              : true # true, false (default)
+# breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "facebook", "google-plus", custom"
@@ -41,7 +41,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "app-hosting-xrdocs.jpg" # Open Graph/Twitter default site image
+og_image                 : "site-logo.png" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -149,85 +149,48 @@ kramdown:
 
 # Collections
 collections:
-  techdocs:
-    output: false 
-    permalink: /:collection/:path/
-  blogs:
+  getting-started:
     output: true
     permalink: /:collection/:path/
-  tutorials:
+  helpdocs:
     output: true
     permalink: /:collection/:path/
-
+  
 
 # Defaults
 defaults:
-# _techdocs
+# _getting-started
   - scope:
       path: ""
-      type: techdocs
+      type: getting-started 
     values:
       layout: single
+      author_profile: true
+      read_time: false 
+      comments: true
+      share: true
+      related: true
+      position: "top"
+# _helpdocs
+  - scope:
+      path: ""
+      type: helpdocs 
+    values:
+      layout: single
+      author_profile: true
       read_time: false
-      author_profile: false
-      share: false
-      comments: false
-
-# _blogs
-  - scope:
-      path: ""
-      type: blogs
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
       comments: true
       share: true
       related: true
       position: "top"
-# _tutorials
-  - scope:
-      path: ""
-      type: tutorials
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-      position: "top"
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
+      sitemap: false
+# _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: true
-  # _docs
-  - scope:
-      path: ""
-      type: docs
-    values:
-      layout: single
-      read_time: false
-      author_profile: false
-      share: false
-      comments: false
-      sidebar:
-        nav: "docs"
-
 
 # Outputting
 permalink: /:categories/:title/
@@ -283,12 +246,13 @@ tags:
 
 
 prose:
-  siteurl: 'https://xrdocs.github.io/application-hosting/'
+  siteurl: 'https://xrdocs.github.io'
   relativeLinks: 'http://prose.github.io/starter/links.jsonp'
   media: 'images'
   ignore:
     - index.md
     - _config.yml
+    - /_sass
     - /_layouts
     - /_includes
     - /_posts
@@ -305,7 +269,6 @@ prose:
     - /_recipes
     - /assets
     - /images
-    - /_sass
     - /_data/ui-text.yml
     - Gemfile
     - Gemfile.lock
@@ -316,16 +279,20 @@ prose:
     - search_data.html
     - .jekyll-metadata
     - CHANGELOG.md
-    - feed.xml
     - README.md
-    - _config.pdf.yml
+    - feed.xml
   metadata:
-    _blogs:
+    _getting-started:
       - name: "title"
         field:
             element: "text"
             label: "Title"
             value: ""
+      - name: "permalink"
+        field:
+            element: "text"
+            label: "Relative URL"
+            help: "provide a url relative to site url, for eg. /getting-started/blog1"
       - name: "author"
         field:
             element: "text"
@@ -360,55 +327,17 @@ prose:
             element: "text"
             label: "Date"
             value: "CURRENT_DATETIME"
-
-    _techdocs:
-      - name: "permalink"
-        field:
-            element: "text"
-            label: "Relative URL"
-            help: "provide a url relative to site url, for eg. /techdocs/doc1/home"
-      - name: "excerpt"
-        field:
-            element: "text"
-            help: "Brief description of the Technical Document"
-            label: "Excerpt"
-      - name: "position"
-        field:
-            element: "text"
-            label: "Techdoc Page Position"
-            help: "Set this to 'top' only for the first page of the techdoc"
-      - name: "tags"
-        field:
-            element: "multiselect"
-            label: "Add Tags"
-            placeholder: "Choose Tags"
-            alterable: true
-            options:
-             - name: "Vagrant"
-               value: "vagrant"
-             - name: "IOS-XR"
-               value: "iosxr"
-             - name: "Cisco"
-               value: "cisco"
-             - name: "Linux"
-               value: "linux"
-      - name: "modified"
-        field:
-            element: "text"
-            label: "Date"
-            value: "CURRENT_DATETIME"
-      - name: "published"
-        field:
-            label: "Published"
-            element: "checkbox"
-            value: false
-
-    _tutorials:
+    _helpdocs:
       - name: "title"
         field:
             element: "text"
             label: "Title"
             value: ""
+      - name: "permalink"
+        field:
+            element: "text"
+            label: "Relative URL"
+            help: "provide a url relative to site url, for eg. /helpdocs/docname"
       - name: "author"
         field:
             element: "text"
@@ -416,13 +345,8 @@ prose:
       - name: "excerpt"
         field:
             element: "text"
-            help: "Brief description of the tutorial"
+            help: "Brief description of the helpdoc"
             label: "Excerpt"
-      - name: "published"
-        field:
-            label: "Published"
-            element: "checkbox"
-            value: false
       - name: "tags"
         field:
             element: "multiselect"
@@ -438,14 +362,17 @@ prose:
                value: "cisco"
              - name: "Linux"
                value: "linux"
+      - name: "published"
+        field:
+            label: "Published"
+            element: "checkbox"
+            value: false
       - name: "date"
         field:
             element: "text"
             label: "Date"
             value: "CURRENT_DATETIME"
 
-
-tag_array: []
 
 sass:
   sass_dir: _sass
@@ -458,5 +385,5 @@ compress_html:
   ignore:
     envs: development
 
-host: "localhost"
+host: "10.0.0.188"
 port: 4000
