@@ -6,6 +6,7 @@ html {
   /* sticky footer fix */
   position: relative;
   min-height: 100%;
+  overflow-x:hidden;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
   font-family: $global-font-family;
   font-weight: 100;
   line-height: 1.5;
+  overflow-x:hidden;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -313,13 +315,21 @@ nav {
     float: right;
     vertical-align:top;
     font-size:1em;
-    width: 25%;
+    width: 22%;
     height: 600px;
+    margin-right: 1em;
 }
 
 .rssfeed {
+    overflow: hidden;
     position: relative;
-    width: 100%;
+    top: auto;
+    right: 0px;
+    width: 100%; 
+    border-radius: 20px;
+  -webkit-box-shadow: 0 2px 2px #888888;
+  -moz-box-shadow: 0 2px 2px #888888;
+  box-shadow: 0 2px 2px #888888;
 }
 
 
@@ -328,7 +338,6 @@ nav {
     vertical-align:top;
     width: 70%;
     font-size: 1em;
-    margin: 10px;
 }
 
 
@@ -349,20 +358,15 @@ nav {
         float: none; 
         clear: both;
         display: block;
-        width: 100%;
+        width: 85%;
+        margin: 0 auto
     }
 
-
-    .rssfeed {
-        position: relative;
-        width: 100%;
-    }
 
     .container__marketing {
         clear: both;
         float: none;
         display: block;
-        margin: 10px;
         width: 100%;
     }
 

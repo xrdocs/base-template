@@ -6,11 +6,8 @@ $(window).keyup(function (e) {
   } else if(key == 37) { // left arrow
     $('#myCarousel').carousel('next');
     return false;  
-  } else if(key == 40) { // down arrow
+  } else if(key == 38) { // up arrow
     $('#myCarousel').carousel('pause');
     return false;
-  } else if(key == 38) { // up arrow
-    $('#myCarousel').carousel();
-    return false;
-  }
+ }
 });

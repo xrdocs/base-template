@@ -1,24 +1,44 @@
-<script src="{{ base_path }}/assets/js/main.min.js"></script>
-<script src="{{ base_path }}/assets/js/scrollmenu.js"></script>
-<script src="{{ base_path }}/assets/js/bootstrap.min.js"></script>
-<script src="{{ base_path }}/assets/js/holder.min.js"></script>
-<script src="{{ base_path }}/assets/js/custom_script.js"></script>
-<script src="{{ base_path }}/assets/js/rssfeed.js"></script>
+{% if  page.url != '/' %}
+    <script src="{{ base_path }}/assets/js/main.min.js"></script>
+    <script src="{{ base_path }}/assets/js/scrollmenu.js"></script>
+    <script src="{{ base_path }}/assets/js/bootstrap.min.js"></script>
+    <script src="{{ base_path }}/assets/js/holder.min.js"></script>
+    <script src="{{ base_path }}/assets/js/custom_script.js"></script>
+    <script src="{{ base_path }}/assets/js/rssfeed.js"></script>
 
-{% include analytics.html %}
-{% include /comments-providers/scripts.html %}
+    {% include analytics.html %}
+    {% include /comments-providers/scripts.html %}
 
-<!-- material-scrolltop button -->
-<button class="material-scrolltop" type="button"></button>
 
-<p>{{ page.url }}</p>
+    <!-- material-scrolltop button -->
+    <button class="material-scrolltop" type="button"></button>
 
-{% if  page.url  != '/' %}
-<!-- material-scrolltop plugin -->
-<script src="{{ base_path }}/assets/js/material-scrolltop.js"></script>
+    <!-- material-scrolltop plugin -->
+    <script src="{{ base_path }}/assets/js/material-scrolltop.js"></script>
 
-<!-- Initialize material-scrolltop with (minimal) -->
-<script>
-    $('body').materialScrollTop();
-</script>
+    <!-- Initialize material-scrolltop with (minimal) -->
+    <script>
+        $('body').materialScrollTop();
+    </script>
+
+{% else %}
+
+    <script>
+        window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+
+          t._e = [];
+          t.ready = function(f) {
+          t._e.push(f);
+          };
+
+          return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
 {% endif %}

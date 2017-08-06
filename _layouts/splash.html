@@ -15,19 +15,20 @@ layout: default
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="{{ base_path }}/images/xrdocs_background-globe.png" alt="First slide">
+          <img class="first-slide" src="{{ base_path }}/images/xrdocs_background-globe.png" alt="First slide" style="height:100%;width:100%;">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            <div class="carousel-caption" style="bottom: 3em;">
+              <h1>@xrdocs</h1>
+              <p>Documentation Blogs and Tutorials on all things IOS-XR<br/>An Open, Extensible and Stable Cloud-Scale Network Operating System</p>
+              <a class="twitter-follow-button" href="https://twitter.com/xrdocs" data-show-count="false" data-size="large">>Follow @xrdocs</a><br/>
+              <a href="{{ base_path }}/getting-started" class="btn btn--light-outline btn--large"><i class="fa fa-step-forward"></i> Get Started!</a>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <img class="second-slide" src="{{ base_path }}/images/yellow_soothing_image.jpg" alt="Second slide" style="height:100%;width:100%;">
           <div class="container">
-            <div class="carousel-caption">
+            <div class="carousel-caption" style="color:#5a5a5a;">
               <h1>Another example headline.</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
@@ -35,7 +36,7 @@ layout: default
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <img class="third-slide" src="" alt="Third slide" style="height:100%;width:100%;">
           <div class="container">
             <div class="carousel-caption">
               <h1>One more for good measure.</h1>
@@ -59,21 +60,21 @@ layout: default
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div class="wrapper-div" style="height: 100%; max-width: 100vw;">
+<div class="wrapper-div" style="height: 100%; max-width: 100vw; padding-bottom: 0px;">
 
     <div class="container__marketing">
       <!-- Three columns of text below the carousel -->
-      <div class="row" style="margin-top:20px; margin-bottom:20px;">
-        <div class="col-lg-4" style="margin-left:50px; margin-right:50px;">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="display: block; margin: 0  auto;">
+      <div class="row" style="margin: 0  auto;">
+        <div class="col-lg-4" style="margin-left: 3em; margin-right: 3em;">
+          <a href="{{ base_path }}/images/docker_onbox_telemetry.png"><img src="{{ base_path }}/images/docker_onbox_telemetry.png" alt="Generic placeholder image" style="display: block; margin: 0  auto; height: 400; width: 600";></a>
           <div class="page__content" style="text-align:center;">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
           </div>
           <p style="text-align:center;"><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4" style="margin-left:50px; margin-right:50px;">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" style="display: block; margin: 0  auto;">
+        <div class="col-lg-4" style="margin-left: 3em; margin-right: 3em;">
+          <a href="{{ base_path }}/images/basic_influxdb.png"><img src="{{ base_path }}/images/basic_influxdb.png" alt="Generic placeholder image" style="display: block; margin: 0  auto; border-radius: 15px; height:400; width:600;"></a>
           <div class="page__content" style="text-align:center;">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
@@ -81,6 +82,7 @@ layout: default
           <p style="text-align:center;"><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
+
 
 
       <!-- START THE FEATURETTES -->
@@ -95,9 +97,31 @@ layout: default
         </div>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <a href="https://xrdocs.github.io/design/blogs/2017-08-01-internet-edge-peering-current-practice/"><img class="featurette-image img-responsive center-block" src="{{ base_path }}/images/peering-design.png" data-src="holder.js/500x500/auto" alt="Design @xrdocs"></a>
         </div>
       </div>
+
+
+      <hr class="featurette-divider">
+
+      <div class="row" style="margin: 0  auto;">
+        <div class="col-lg-4" style="margin-left: 3em; margin-right: 3em;">
+          <img class="img-circle" src="{{ base_path }}/images/avatars/cisco-design-team.png" alt="Generic placeholder image" width="140" height="140" style="display: block; margin: 0  auto;">
+          <div class="page__content" style="text-align:center;">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          </div>
+          <p style="text-align:center;"><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4" style="margin-left: 3em; margin-right: 3em;">
+          <img class="img-circle" src="{{ base_path }}/images/automation-xrdocs-green.png" alt="Generic placeholder image" width="140" height="140" style="display: block; margin: 0  auto;">
+          <div class="page__content" style="text-align:center;">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          </div>
+          <p style="text-align:center;"><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
       <hr class="featurette-divider">
 
@@ -127,7 +151,9 @@ layout: default
         </div>
       </div>
 
+
       <hr class="featurette-divider">
+
 
       <!-- /END THE FEATURETTES -->
 
@@ -142,3 +168,10 @@ layout: default
     <div style="clear: both;"></div>
 
 </div>
+
+<script src="{{ base_path }}/assets/js/main.min.js"></script>
+<script src="{{ base_path }}/assets/js/scrollmenu.js"></script>
+<script src="{{ base_path }}/assets/js/bootstrap.min.js"></script>
+<script src="{{ base_path }}/assets/js/holder.min.js"></script>
+<script src="{{ base_path }}/assets/js/custom_script.js"></script>
+<script src="{{ base_path }}/assets/js/rssfeed.js"></script>
